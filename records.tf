@@ -24,7 +24,7 @@ locals {
   #     zone_id  = cloudflare_zone.toyra_se.id
   #     name     = "@"
   #     type     = "TXT"
-  #     content  = "v=spf1 include:_spf.protonmail.ch mx ~all"
+  #     content  = "\"v=spf1 include:_spf.protonmail.ch mx ~all\""
   #     ttl      = 1
   #     proxied  = false
   #     priority = null
@@ -33,7 +33,7 @@ locals {
   #     zone_id  = cloudflare_zone.toyra_se.id
   #     name     = "@"
   #     type     = "TXT"
-  #     content  = "protonmail-verification=REPLACE_ME"
+  #     content  = "\"protonmail-verification=REPLACE_ME\""
   #     ttl      = 1
   #     proxied  = false
   #     priority = null
@@ -69,7 +69,7 @@ locals {
   #     zone_id  = cloudflare_zone.toyra_se.id
   #     name     = "_dmarc"
   #     type     = "TXT"
-  #     content  = "v=DMARC1; p=quarantine"
+  #     content  = "\"v=DMARC1; p=quarantine\""
   #     ttl      = 1
   #     proxied  = false
   #     priority = null
@@ -100,7 +100,7 @@ locals {
       zone_id  = cloudflare_zone.spange_se.id
       name     = "@"
       type     = "TXT"
-      content  = "v=spf1 include:_spf.protonmail.ch ~all"
+      content  = "\"v=spf1 include:_spf.protonmail.ch ~all\""
       ttl      = 1
       proxied  = false
       priority = null
@@ -109,7 +109,7 @@ locals {
       zone_id  = cloudflare_zone.spange_se.id
       name     = "@"
       type     = "TXT"
-      content  = "protonmail-verification=7d291d668dc73a0070617df94aa88315be727fb6"
+      content  = "\"protonmail-verification=7d291d668dc73a0070617df94aa88315be727fb6\""
       ttl      = 1
       proxied  = false
       priority = null
@@ -145,7 +145,7 @@ locals {
       zone_id  = cloudflare_zone.spange_se.id
       name     = "_dmarc"
       type     = "TXT"
-      content  = "v=DMARC1; p=quarantine"
+      content  = "\"v=DMARC1; p=quarantine\""
       ttl      = 1
       proxied  = false
       priority = null
