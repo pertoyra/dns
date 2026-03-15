@@ -23,4 +23,4 @@ Never commit `terraform.tfvars`, API tokens, or state files. These are covered b
 
 ## Safety
 
-Do not run `terraform apply` without explicit user confirmation.
+Do not run `tofu apply` without explicit user confirmation.

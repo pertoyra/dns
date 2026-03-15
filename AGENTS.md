@@ -23,4 +23,4 @@ Always include `priority = null` on non-MX records so all map entries have the s
 
 ## Safety
 
-Never run `terraform apply` without explicit user confirmation.
+Never run `tofu apply` without explicit user confirmation.
