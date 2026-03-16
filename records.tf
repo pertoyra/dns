@@ -1,81 +1,78 @@
 locals {
-  # TODO: uncomment when toyra.se ProtonMail values are available
-  # (retrieve DKIM token and verification TXT from Proton Mail → Settings → Email Addresses → toyra.se)
-  # toyra_se_records = {
-  #   "toyra_se_mx_10" = {
-  #     zone_id  = cloudflare_zone.toyra_se.id
-  #     name     = "@"
-  #     type     = "MX"
-  #     content  = "mail.protonmail.ch"
-  #     ttl      = 1
-  #     proxied  = false
-  #     priority = 10
-  #   }
-  #   "toyra_se_mx_20" = {
-  #     zone_id  = cloudflare_zone.toyra_se.id
-  #     name     = "@"
-  #     type     = "MX"
-  #     content  = "mailsec.protonmail.ch"
-  #     ttl      = 1
-  #     proxied  = false
-  #     priority = 20
-  #   }
-  #   "toyra_se_spf" = {
-  #     zone_id  = cloudflare_zone.toyra_se.id
-  #     name     = "@"
-  #     type     = "TXT"
-  #     content  = "\"v=spf1 include:_spf.protonmail.ch mx ~all\""
-  #     ttl      = 1
-  #     proxied  = false
-  #     priority = null
-  #   }
-  #   "toyra_se_verification" = {
-  #     zone_id  = cloudflare_zone.toyra_se.id
-  #     name     = "@"
-  #     type     = "TXT"
-  #     content  = "\"protonmail-verification=REPLACE_ME\""
-  #     ttl      = 1
-  #     proxied  = false
-  #     priority = null
-  #   }
-  #   "toyra_se_dkim_1" = {
-  #     zone_id  = cloudflare_zone.toyra_se.id
-  #     name     = "protonmail._domainkey"
-  #     type     = "CNAME"
-  #     content  = "protonmail.domainkey.REPLACE_ME.domains.proton.ch."
-  #     ttl      = 1
-  #     proxied  = false
-  #     priority = null
-  #   }
-  #   "toyra_se_dkim_2" = {
-  #     zone_id  = cloudflare_zone.toyra_se.id
-  #     name     = "protonmail2._domainkey"
-  #     type     = "CNAME"
-  #     content  = "protonmail2.domainkey.REPLACE_ME.domains.proton.ch."
-  #     ttl      = 1
-  #     proxied  = false
-  #     priority = null
-  #   }
-  #   "toyra_se_dkim_3" = {
-  #     zone_id  = cloudflare_zone.toyra_se.id
-  #     name     = "protonmail3._domainkey"
-  #     type     = "CNAME"
-  #     content  = "protonmail3.domainkey.REPLACE_ME.domains.proton.ch."
-  #     ttl      = 1
-  #     proxied  = false
-  #     priority = null
-  #   }
-  #   "toyra_se_dmarc" = {
-  #     zone_id  = cloudflare_zone.toyra_se.id
-  #     name     = "_dmarc"
-  #     type     = "TXT"
-  #     content  = "\"v=DMARC1; p=quarantine\""
-  #     ttl      = 1
-  #     proxied  = false
-  #     priority = null
-  #   }
-  # }
-  toyra_se_records = {}
+  toyra_se_records = {
+    "toyra_se_mx_10" = {
+      zone_id  = cloudflare_zone.toyra_se.id
+      name     = "@"
+      type     = "MX"
+      content  = "mail.protonmail.ch"
+      ttl      = 1
+      proxied  = false
+      priority = 10
+    }
+    "toyra_se_mx_20" = {
+      zone_id  = cloudflare_zone.toyra_se.id
+      name     = "@"
+      type     = "MX"
+      content  = "mailsec.protonmail.ch"
+      ttl      = 1
+      proxied  = false
+      priority = 20
+    }
+    "toyra_se_spf" = {
+      zone_id  = cloudflare_zone.toyra_se.id
+      name     = "@"
+      type     = "TXT"
+      content  = "\"v=spf1 include:_spf.protonmail.ch ~all\""
+      ttl      = 1
+      proxied  = false
+      priority = null
+    }
+    "toyra_se_verification" = {
+      zone_id  = cloudflare_zone.toyra_se.id
+      name     = "@"
+      type     = "TXT"
+      content  = "\"protonmail-verification=f3f0227252d6d700db5fcfec3207d7b59008e1e2\""
+      ttl      = 1
+      proxied  = false
+      priority = null
+    }
+    "toyra_se_dkim_1" = {
+      zone_id  = cloudflare_zone.toyra_se.id
+      name     = "protonmail._domainkey"
+      type     = "CNAME"
+      content  = "protonmail.domainkey.dokznsjaplguhrhssosbeapeqvyn4s3uiknpujfkxvljyf4djsl2q.domains.proton.ch."
+      ttl      = 1
+      proxied  = false
+      priority = null
+    }
+    "toyra_se_dkim_2" = {
+      zone_id  = cloudflare_zone.toyra_se.id
+      name     = "protonmail2._domainkey"
+      type     = "CNAME"
+      content  = "protonmail2.domainkey.dokznsjaplguhrhssosbeapeqvyn4s3uiknpujfkxvljyf4djsl2q.domains.proton.ch."
+      ttl      = 1
+      proxied  = false
+      priority = null
+    }
+    "toyra_se_dkim_3" = {
+      zone_id  = cloudflare_zone.toyra_se.id
+      name     = "protonmail3._domainkey"
+      type     = "CNAME"
+      content  = "protonmail3.domainkey.dokznsjaplguhrhssosbeapeqvyn4s3uiknpujfkxvljyf4djsl2q.domains.proton.ch."
+      ttl      = 1
+      proxied  = false
+      priority = null
+    }
+    "toyra_se_dmarc" = {
+      zone_id  = cloudflare_zone.toyra_se.id
+      name     = "_dmarc"
+      type     = "TXT"
+      content  = "\"v=DMARC1; p=quarantine\""
+      ttl      = 1
+      proxied  = false
+      priority = null
+    }
+  }
 
   spange_se_records = {
     "spange_se_mx_10" = {
