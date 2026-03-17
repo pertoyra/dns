@@ -168,6 +168,15 @@ locals {
       proxied  = false
       priority = null
     }
+    "noomispange_se_cname_assets" = {
+      zone_id  = cloudflare_zone.noomispange_se.id
+      name     = "assets"
+      type     = "CNAME"
+      content  = "public.r2.dev"
+      ttl      = 1
+      proxied  = true
+      priority = null
+    }
   }
 
   all_records = merge(
